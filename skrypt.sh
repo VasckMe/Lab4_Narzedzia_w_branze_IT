@@ -22,15 +22,15 @@ function display_help {
 	echo "--init           Klonuje repozytorium do bieżącego katalogu"
 }
 
-if [ "$1" == "--date" ]; then
+if [[ "$1" == "--date" || "$1" == "-d" ]]; then
     date
-elif [ "$1" == "--logs" ]; then
+elif [[ "$1" == "--logs" || "$1" == "-l" ]]; then
     if [ -n "$2" ]; then
         create_logs "$2"
     else
         create_logs 100
     fi
-elif [ "$1" == "--help" ]; then
+elif [[ "$1" == "--help" || "$1" == "-h" ]]; then
     display_help
 else
     echo "Nieznana opcja. Użyj --help, aby zobaczyć dostępne opcje."

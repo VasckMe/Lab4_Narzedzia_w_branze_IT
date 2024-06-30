@@ -15,7 +15,11 @@ function create_logs {
 if [ "$1" == "--date" ]; then
     date
 elif [ "$1" == "--logs" ]; then
-    create_logs 100
+    if [ -n "$2" ]; then
+        create_logs "$2"
+    else
+        create_logs 100
+    fi
 else
     echo "Nieznana opcja. Użyj --help, aby zobaczyć dostępne opcje."
 fi

@@ -12,6 +12,13 @@ function create_logs {
     done
 }
 
+function display_help {
+	echo "Dostępne opcje:"
+	echo "--date       	Wyświetla dzisiejszą datę"
+	echo "--logs [liczba]	Tworzy N plików logx.txt (domyślnie 100)"
+	echo "--help       	Wyświetla wszystkie dostępne opcje"
+}
+
 if [ "$1" == "--date" ]; then
     date
 elif [ "$1" == "--logs" ]; then
@@ -20,6 +27,8 @@ elif [ "$1" == "--logs" ]; then
     else
         create_logs 100
     fi
+elif [ "$1" == "--help" ]; then
+    display_help
 else
     echo "Nieznana opcja. Użyj --help, aby zobaczyć dostępne opcje."
 fi

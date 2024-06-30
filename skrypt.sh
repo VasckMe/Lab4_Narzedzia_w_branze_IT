@@ -14,12 +14,12 @@ function create_logs {
 
 function display_help {
 	echo "Dostępne opcje:"
-	echo "--date       	Wyświetla dzisiejszą datę"
-	echo "--logs [liczba]	Tworzy N plików logx.txt (domyślnie 100)"
-	echo "--help       	Wyświetla wszystkie dostępne opcje"
-	echo "--error, -e [N]  Tworzy N plików errors/errorx.txt 
+	echo "--date, -d       	Wyświetla dzisiejszą datę"
+	echo "--logs, -l [N]	Tworzy N plików logx.txt (domyślnie 100)"
+	echo "--help, -h       	Wyświetla wszystkie dostępne opcje"
+    echo "--error, -e [N]  Tworzy N plików errors/errorx.txt
 (domyślnie 100)"
-	echo "--init           Klonuje repozytorium do bieżącego katalogu"
+    echo "--init           Klonuje repozytorium do bieżącego katalogu"
 }
 
 if [[ "$1" == "--date" || "$1" == "-d" ]]; then

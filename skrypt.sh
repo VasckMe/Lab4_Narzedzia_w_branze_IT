@@ -14,9 +14,9 @@ function create_logs {
 
 function display_help {
 	echo "Dostępne opcje:"
-	echo "--date       	Wyświetla dzisiejszą datę"
-	echo "--logs [liczba]	Tworzy N plików logx.txt (domyślnie 100)"
-	echo "--help       	Wyświetla wszystkie dostępne opcje"
+	echo "--date, -d       	Wyświetla dzisiejszą datę"
+	echo "--logs, -l [N]	Tworzy N plików logx.txt (domyślnie 100)"
+	echo "--help, -h       	Wyświetla wszystkie dostępne opcje"
 }
 
 if [[ "$1" == "--date" || "$1" == "-d" ]]; then

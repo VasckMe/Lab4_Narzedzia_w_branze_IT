@@ -17,6 +17,9 @@ function display_help {
 	echo "--date       	Wyświetla dzisiejszą datę"
 	echo "--logs [liczba]	Tworzy N plików logx.txt (domyślnie 100)"
 	echo "--help       	Wyświetla wszystkie dostępne opcje"
+	echo "--error, -e [N]  Tworzy N plików errors/errorx.txt 
+(domyślnie 100)"
+	echo "--init           Klonuje repozytorium do bieżącego katalogu"
 }
 
 if [ "$1" == "--date" ]; then

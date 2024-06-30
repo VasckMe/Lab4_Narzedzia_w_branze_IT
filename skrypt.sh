@@ -30,6 +30,9 @@ elif [[ "$1" == "--logs" || "$1" == "-l" ]]; then
     else
         create_logs 100
     fi
+elif [[ "$1" == "--init" ]]; then
+    git clone . $(pwd)
+    export PATH=$(pwd):$PATH
 elif [[ "$1" == "--help" || "$1" == "-h" ]]; then
     display_help
 else

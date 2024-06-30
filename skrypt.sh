@@ -12,6 +12,16 @@ function create_logs {
     done
 }
 
+function create_errors {
+    local count=$1
+    for ((i = 1; i <= count; i++)); do
+        FILE_NAME="error${i}.txt"
+        echo "Nazwa pliku: $FILE_NAME" > "$FILE_NAME"
+        echo "Nazwa skryptu: $SCRIPT_NAME" >> "$FILE_NAME"
+        echo "Data utworzenia: $(date)" >> "$FILE_NAME"
+    done
+}
+
 function display_help {
 	echo "Dostępne opcje:"
 	echo "--date, -d       	Wyświetla dzisiejszą datę"
@@ -26,6 +36,12 @@ elif [[ "$1" == "--logs" || "$1" == "-l" ]]; then
         create_logs "$2"
     else
         create_logs 100
+    fi
+elif [[ "$1" == "--error" || "$1" == "-e" ]]; then
+    if [ -n "$2" ]; then
+        create_errors "$2"
+    else
+        create_errors 100
     fi
 elif [[ "$1" == "--init" ]]; then
     git clone . $(pwd)
